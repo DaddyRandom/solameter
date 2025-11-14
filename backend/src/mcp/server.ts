@@ -15,7 +15,7 @@ mcpApp.use(express.json());
  * GET /mcp/tools
  * List available tools
  */
-mcpApp.get('/mcp/tools', (req, res) => {
+mcpApp.get('/mcp/tools', (_req, res) => {
   res.json({
     tools: [
       {
@@ -98,7 +98,7 @@ mcpApp.post('/mcp/execute', async (req, res) => {
  * GET /mcp/health
  * Health check for MCP server
  */
-mcpApp.get('/mcp/health', (req, res) => {
+mcpApp.get('/mcp/health', (_req, res) => {
   res.json({
     status: 'ok',
     server: 'Solameter MCP Server',

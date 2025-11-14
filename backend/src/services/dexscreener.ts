@@ -1,5 +1,4 @@
 import axios from 'axios';
-import config from '../config';
 import { TrendingToken } from '../types';
 
 const DEXSCREENER_API_BASE = 'https://api.dexscreener.com/latest/dex';

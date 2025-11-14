@@ -7,7 +7,7 @@ const router = Router();
  * GET /api/v1/current
  * Returns current gauge reading and volume data
  */
-router.get('/current', async (req, res, next) => {
+router.get('/current', async (_req, res, next) => {
   try {
     const data = await getCurrentGaugeData();
     res.json(data);
@@ -34,7 +34,7 @@ router.get('/trending', async (req, res, next) => {
  * GET /api/v1/baseline
  * Returns baseline configuration
  */
-router.get('/baseline', async (req, res, next) => {
+router.get('/baseline', async (_req, res, next) => {
   try {
     const info = getBaselineInfo();
     res.json(info);
@@ -47,7 +47,7 @@ router.get('/baseline', async (req, res, next) => {
  * GET /api/v1/stats
  * Returns overall statistics
  */
-router.get('/stats', async (req, res, next) => {
+router.get('/stats', async (_req, res, next) => {
   try {
     const gaugeData = await getCurrentGaugeData();
     const trending = await getTrendingTokens(5);
