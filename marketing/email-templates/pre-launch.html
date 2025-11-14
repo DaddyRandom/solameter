@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solameter Launch Countdown</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #0A0A0A;
+            color: #FFFFFF;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: 900;
+            color: #FF0000;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #888888;
+        }
+        .countdown {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(139, 0, 0, 0.2));
+            border: 2px solid #FF0000;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .countdown-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .countdown-unit {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid #FF0000;
+            border-radius: 8px;
+            padding: 15px;
+            min-width: 80px;
+        }
+        .countdown-value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #FF0000;
+        }
+        .countdown-label {
+            font-size: 12px;
+            color: #888888;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+        .section {
+            background: #1A1A1A;
+            border: 1px solid #333333;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FF0000;
+            margin-bottom: 15px;
+        }
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 10px 0;
+            border-bottom: 1px solid #333333;
+        }
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+        .checklist li:before {
+            content: "✅ ";
+            margin-right: 10px;
+        }
+        .button {
+            display: inline-block;
+            background: #FF0000;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #CC0000;
+        }
+        .button-secondary {
+            background: #333333;
+        }
+        .button-secondary:hover {
+            background: #444444;
+        }
+        .social-links {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .social-button {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #333333;
+            border-radius: 50%;
+            margin: 0 10px;
+            line-height: 40px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .warning {
+            background: rgba(255, 255, 0, 0.1);
+            border: 1px solid #FFD700;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #FFD700;
+        }
+        .footer {
+            text-align: center;
+            color: #666666;
+            font-size: 12px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333333;
+        }
+        @media (max-width: 600px) {
+            .countdown-timer {
+                flex-wrap: wrap;
+            }
+            .countdown-unit {
+                min-width: 60px;
+            }
+            .countdown-value {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">🏎️</div>
+            <div class="title">SOLAMETER</div>
+            <div class="subtitle">Your Ticket to the Moon</div>
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown">
+            <div class="countdown-title">🚀 LAUNCH COUNTDOWN 🚀</div>
+            <div class="countdown-timer">
+                <div class="countdown-unit">
+                    <div class="countdown-value">07</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-value">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-value">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-value">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+            <p style="margin-top: 20px; font-size: 16px;">Get ready to ape! 🦍</p>
+        </div>
+
+        <!-- What is Solameter -->
+        <div class="section">
+            <div class="section-title">What is Solameter?</div>
+            <p>A real-time trading activity monitor for Solana meme coins with a Formula One-inspired cockpit design and Simpsons aesthetic.</p>
+            <p><strong>Real utility. Real community. Real gains (maybe).</strong></p>
+        </div>
+
+        <!-- Pre-Launch Checklist -->
+        <div class="section">
+            <div class="section-title">Your Pre-Launch Checklist</div>
+            <ul class="checklist">
+                <li>Follow @SolameterSOL on X (Twitter)</li>
+                <li>Join our Telegram community</li>
+                <li>Set calendar reminder for launch day</li>
+                <li>Prepare your wallet (Phantom/Solflare)</li>
+                <li>Read the whitepaper</li>
+                <li>Tell your degen friends</li>
+            </ul>
+        </div>
+
+        <!-- Tokenomics -->
+        <div class="section">
+            <div class="section-title">$SOLA Tokenomics</div>
+            <p><strong>Total Supply:</strong> 1,000,000,000 $SOLA</p>
+            <p><strong>Launch:</strong> Fair launch on Pump.fun</p>
+            <p><strong>Team Allocation:</strong> 0% (we're in this together)</p>
+            <p><strong>Liquidity:</strong> Locked forever</p>
+            <p><strong>No VCs. No Presale. No BS.</strong></p>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="https://solameter.xyz" class="button">Visit Website</a>
+            <a href="https://solameter.xyz/whitepaper" class="button button-secondary">Read Whitepaper</a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://x.com/SolameterSOL" class="social-button">𝕏</a>
+            <a href="https://t.me/solameter" class="social-button">📱</a>
+            <a href="https://discord.gg/solameter" class="social-button">💬</a>
+        </div>
+
+        <!-- Warning -->
+        <div class="warning">
+            ⚠️ <strong>IMPORTANT:</strong> This is not financial advice. Cryptocurrency is highly volatile and risky. Only invest what you can afford to lose. Do your own research (DYOR).
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>You're receiving this because you signed up for Solameter launch updates.</p>
+            <p><a href="#" style="color: #666666;">Unsubscribe</a> | <a href="https://solameter.xyz" style="color: #666666;">Visit Website</a></p>
+            <p style="margin-top: 20px;">© 2024 Solameter Community | Built by degens, for degens</p>
+        </div>
+    </div>
+</body>
+</html>
