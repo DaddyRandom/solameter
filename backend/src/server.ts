@@ -13,7 +13,10 @@ const httpServer = createServer(app);
 
 // Middleware
 app.use(helmet());
-app.use(cors({ origin: config.corsOrigin }));
+app.use(cors({
+  origin: true, // Allow all origins in development
+  credentials: true
+}));
 app.use(compression());
 app.use(morgan(config.nodeEnv === 'development' ? 'dev' : 'combined'));
 app.use(express.json());
