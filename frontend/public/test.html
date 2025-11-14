@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solameter Test Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #0A0A0A;
+            color: #FFFFFF;
+            font-family: monospace;
+        }
+        .test-box {
+            border: 2px solid #FF0000;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .success { border-color: #00FF00; }
+        .error { border-color: #FF0000; }
+    </style>
+</head>
+<body>
+    <h1>🏎️ Solameter System Test</h1>
+
+    <div class="test-box success" id="pageLoad">
+        ✅ Static HTML Loaded Successfully
+    </div>
+
+    <div class="test-box" id="jsTest">
+        ⏳ Testing JavaScript...
+    </div>
+
+    <div class="test-box" id="backendTest">
+        ⏳ Testing Backend API...
+    </div>
+
+    <div class="test-box" id="wsTest">
+        ⏳ Testing WebSocket...
+    </div>
+
+    <script>
+        // Test 1: JavaScript
+        document.getElementById('jsTest').innerHTML = '✅ JavaScript is working';
+        document.getElementById('jsTest').className = 'test-box success';
+
+        // Test 2: Backend API
+        fetch('http://localhost:3001/health')
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('backendTest').innerHTML = `✅ Backend API Connected<br>Status: ${data.status}<br>Uptime: ${data.uptime}s`;
+                document.getElementById('backendTest').className = 'test-box success';
+            })
+            .catch(e => {
+                document.getElementById('backendTest').innerHTML = `❌ Backend Error: ${e.message}`;
+                document.getElementById('backendTest').className = 'test-box error';
+            });
+
+        // Test 3: WebSocket
+        try {
+            const ws = new WebSocket('ws://localhost:3001/ws/live');
+            ws.onopen = () => {
+                document.getElementById('wsTest').innerHTML = '✅ WebSocket Connected';
+                document.getElementById('wsTest').className = 'test-box success';
+            };
+            ws.onerror = (e) => {
+                document.getElementById('wsTest').innerHTML = `❌ WebSocket Error: ${e}`;
+                document.getElementById('wsTest').className = 'test-box error';
+            };
+        } catch(e) {
+            document.getElementById('wsTest').innerHTML = `❌ WebSocket Error: ${e.message}`;
+            document.getElementById('wsTest').className = 'test-box error';
+        }
+    </script>
+</body>
+</html>
