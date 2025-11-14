@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-solameter-dark text-white antialiased;
+    font-family: 'Roboto Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  }
+
+  .box-glow {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), 0 0 40px rgba(255, 0, 0, 0.3);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7), inset 0 0 10px rgba(255, 0, 0, 0.3);
+  }
+}
